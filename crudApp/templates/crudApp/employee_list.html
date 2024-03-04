@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Employee List{% endblock %}
+{% block header %}Employee List{% endblock %}
+
+{% block content %}
+{% for employee in employees %}
+
+    <p>Name : {{employee.fname}} {{employee.lname}}</p>
+    <p>Email : {{employee.email}}</p>
+    <p>Age : {{employee.age}}</p>
+    <p>Phone no : {{employee.phone_number}}</p>
+    
+    <a href="{% url 'update_employee' employee.id %}">edit</a>
+    <a href="{% url 'delete_employee' employee.id %}">delete</a><br><br>
+
+{% endfor %}
+
+{% endblock %}
+
